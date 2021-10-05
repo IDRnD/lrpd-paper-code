@@ -1,0 +1,86 @@
+{
+    "features": {
+        "type": "NormalizeAudio",
+        "trainable": true,
+        "params": {}
+    },
+    "backbone": {
+        "type": "RawNet",
+        "trainable": true,
+        "params": {
+            "normalize_input": false,
+            "init_conv_params": {
+                "in_channels": 1,
+                "out_channels": 80,
+                "stride": 3,
+                "kernel_size": 3,
+                "padding": 0
+            },
+            "block_setup": [
+                [
+                    80,
+                    80,
+                    false,
+                    3
+                ],
+                [
+                    80,
+                    80,
+                    false,
+                    3
+                ],
+                [
+                    80,
+                    160,
+                    false,
+                    3
+                ],
+                [
+                    160,
+                    160,
+                    false,
+                    3
+                ],
+                [
+                    160,
+                    160,
+                    false,
+                    3
+                ],
+                [
+                    160,
+                    160,
+                    false,
+                    3
+                ]
+            ]
+        }
+    },
+    "pooling": {
+        "type": "StatsPooling1D",
+        "trainable": true,
+        "params": {
+            "mode": "std"
+        }
+    },
+    "cls_head": {
+        "type": "ClassificationHead",
+        "trainable": true,
+        "params": {
+            "input_features_chan": 320,
+            "num_classes": 2,
+            "head_hidden_layers": [
+                [
+                    128,
+                    0.0,
+                    "ReLU"
+                ],
+                [
+                    64,
+                    0.1,
+                    "ReLU"
+                ]
+            ]
+        }
+    }
+}
