@@ -5,7 +5,7 @@ import torch.nn as nn
 
 # Load all model builders
 from .poolings.stats import STAT_POOLINGS
-
+from .architectures.rawnet import RawNet
 
 class ClassificationHead(nn.Module):
     def __init__(self,
