@@ -9,7 +9,7 @@ Install dependencies by running `pip install -r requirements.txt`
 #### Data
 
 Before running train, one should acquire datasets:
-* LRPD dataset using [link]()
+* LRPD dataset using [link](https://drive.google.com/drive/folders/1lHxQ5tPco5F1N8xv_x7lfDOhU2SEsOU9?usp=sharing)
 * ASVSpoof2017 dataset using provided [script](utils/load_asv17.py) by running `python utils/load_asv17.py OUTPUT_FOLDER` or accessing it on [official web page](https://datashare.ed.ac.uk/handle/10283/3055)
 * [MUSAN](http://www.openslr.org/17/),[DECASE 2017 Task3 Acoustic Scenes](http://dcase.community/challenge2017/task-sound-event-detection-in-real-life-audio),[DEMAND](https://deepai.org/dataset/demand) datasets as noise datasets
 
